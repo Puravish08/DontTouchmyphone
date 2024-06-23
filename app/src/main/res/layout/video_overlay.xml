@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@+id/ia_iv_mute_button_new"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="12.0dip"
+        android:layout_marginTop="22.0dip"
+        android:background="@drawable/ia_circle_overlay_bg"
+        android:padding="4.0dip"
+        android:scaleType="centerInside"
+        android:src="@drawable/ia_sel_mute_w"
+        android:visibility="invisible" />
+
+<!--    <com.fyber.inneractive.sdk.ui.IAsmoothProgressBar-->
+<!--        android:id="@+id/ia_video_progressbar_new"-->
+<!--        style="@style/ia_video_progressbar_style_new"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_margin="4.0dip"-->
+<!--        android:layoutDirection="ltr"-->
+<!--        android:visibility="invisible" />-->
+
+    <TextView
+        android:id="@+id/ia_tv_skip_left"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="12.0dip"
+        android:background="@drawable/ia_circle_overlay_bg"
+        android:gravity="center"
+        android:padding="4.0dip"
+        android:scaleType="centerInside"
+        android:textColor="#ffffffff"
+        android:textSize="15.0dip"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ia_iv_skip"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="12.0dip"
+        android:background="@drawable/ia_circle_overlay_bg"
+        android:padding="4.0dip"
+        android:scaleType="centerInside"
+        android:src="@drawable/outline_skip_next_white_18dp"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:id="@+id/ia_cta_container"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="12.0dip"
+        android:background="@drawable/ia_round_overlay_bg_fyber"
+        android:paddingLeft="@dimen/_12sdp"
+        android:paddingRight="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/ia_tv_call_to_action"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:text="CTA_TEXT"
+            android:textColor="#ffffffff"
+            android:textSize="16.0dip" />
+    </FrameLayout>
+</RelativeLayout>

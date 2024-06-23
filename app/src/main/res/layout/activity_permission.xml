@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/screen_bg_color"
+    android:layoutDirection="ltr">
+
+    <TextView
+        android:id="@+id/textView13"
+        style="@style/LargeTextWithPrimaryTextColorStyle"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/please_grant_the_following_permission_to_continue_the_dont_touch_my_phone_app"
+        android:textColor="@color/header_text_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView13"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/main_btn_back"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="12.0dip"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/camera"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/MediumTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/camera_permission"
+                android:textColor="@color/header_text_main"
+                app:layout_constraintStart_toEndOf="@id/imageView17"
+                app:layout_constraintTop_toTopOf="@id/imageView17" />
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/give_camera_permission_for_the_indtuder_selfi_to_capture_the_image_who_is_trying_to_unlock_your_phone"
+                android:textColor="@color/body_text_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageView17"
+                app:layout_constraintTop_toBottomOf="@id/textView15" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/main_btn_back"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imageView171"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="12.0dip"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/external_storage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView151"
+                style="@style/MediumTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/external_storage_permission"
+                app:layout_constraintStart_toEndOf="@id/imageView171"
+                app:layout_constraintTop_toTopOf="@id/imageView171" />
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/give_external_storage_permission_for_the_indtuder_selfi_to_capture_the_image_who_is_trying_to_unlock_your_phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageView171"
+                app:layout_constraintTop_toBottomOf="@id/textView151" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btnGrantPermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/btn_gradient_bg_full_rounded"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:letterSpacing="0.04"
+            android:paddingHorizontal="@dimen/_60sdp"
+            android:paddingVertical="9.0dip"
+            android:paddingLeft="@dimen/_60sdp"
+            android:paddingTop="9.0dip"
+            android:paddingRight="@dimen/_60sdp"
+            android:paddingBottom="9.0dip"
+            android:text="@string/grant_permission"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

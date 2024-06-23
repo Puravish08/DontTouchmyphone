@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/openAdContainer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/ikm_bg_transparent">
+
+    <View
+        android:id="@+id/openAd_bgView"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginTop="48.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/openAd_loadingAds"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:elevation="4.0dip"
+        android:paddingVertical="2.0dip"
+        android:paddingTop="2.0dip"
+        android:paddingBottom="2.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/custom_close_container"
+        android:layout_width="0.0dip"
+        android:layout_height="36.0dip"
+        android:elevation="8.0dip"
+        app:layout_constraintBottom_toTopOf="@+id/openAd_bgView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.75">
+
+        <TextView
+            android:id="@+id/custom_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/ikm_ic_next_24"
+            android:gravity="center"
+            android:minWidth="50.0dip"
+            android:text="Continue to App"
+            android:textColor="#ff888888"
+            android:textSize="10.0dip"
+            android:visibility="gone"
+            app:drawableEndCompat="@drawable/ikm_ic_next_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"  android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:id="@+id/custom_appText"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4.0dip"
+            android:layout_marginEnd="12.0dip"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="12.0dip"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/custom_close_btn"
+            app:layout_constraintStart_toEndOf="@+id/custom_appIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/custom_appIcon"
+            android:layout_width="24.0dip"
+            android:layout_height="24.0dip"
+            android:layout_marginStart="12.0dip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/openAd_txtAd"
+        android:layout_width="wrap_content"
+        android:layout_height="15.0dip"
+        android:layout_marginStart="4.0dip"
+        android:gravity="center"
+        android:paddingHorizontal="4.0dip"
+        android:paddingLeft="4.0dip"
+        android:paddingRight="4.0dip"
+        android:text="Advertisement"
+        android:textColor="@color/color_white_ads"
+        android:textSize="10.0dip"
+        android:translationZ="4.0dip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/openAd_bgView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

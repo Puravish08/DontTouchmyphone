@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/ia_video_background_color">
+
+    <FrameLayout
+        android:id="@+id/ia_texture_view_host"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="0.0dip" />
+
+    <ImageView
+        android:id="@+id/ia_iv_last_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:padding="0.0dip"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/ia_iv_mute_button"
+        style="@style/ia_mute_button_style"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/ia_tv_remaining_time"
+        style="@style/ia_tv_remaining_time_style"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/ia_tv_app_info_button"
+        android:layout_width="@dimen/_92sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/bg_text_overlay"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/_9sdp"
+        android:textAppearance="@style/ia_video_overlay_text_view"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/ia_paused_video_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/ia_video_transparent_overlay"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ia_iv_play_button"
+            style="@style/ia_play_button_style" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/ia_default_endcard_video_overlay"
+        layout="@layout/ia_default_video_end_card"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true" />
+
+    <FrameLayout
+        android:id="@+id/ia_endcard_video_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/ia_video_transparent_overlay"
+        android:contentDescription="ia_endcard_video_overlay"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/ia_buffering_overlay"
+        layout="@layout/ia_buffering_overlay"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/ia_tv_call_to_action"
+        style="@style/ia_tv_call_to_action_style" />
+
+    <ImageView
+        android:id="@+id/ia_iv_expand_collapse_button"
+        style="@style/ia_expand_collapse_button_style"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/ia_tv_skip"
+        style="@style/ia_tv_skip_style"
+        android:enabled="false"
+        android:text="@string/ia_video_skip_text"
+        android:visibility="gone" />
+
+<!--    <com.fyber.inneractive.sdk.ui.IAsmoothProgressBar-->
+<!--        android:id="@+id/ia_video_progressbar"-->
+<!--        style="@style/ia_video_progressbar_style"-->
+<!--        android:layoutDirection="ltr" />-->
+
+    <include
+        android:id="@+id/ia_click_overlay"
+        layout="@layout/ia_click_overlay"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/ia_identifier_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="8.0dip"
+        android:layout_marginBottom="8.0dip"
+        android:layout_toRightOf="@+id/ia_tv_app_info_button"
+        android:padding="@dimen/_8sdp"
+        android:visibility="gone" />
+</merge>

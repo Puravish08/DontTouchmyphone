@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/screen_bg_color"
+    android:layoutDirection="ltr">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_header"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/backButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12.0dip"
+            android:fontFamily="@font/inter_semi_bold"
+            android:padding="@dimen/_6sdp"
+            android:text="@string/apply"
+            android:textColor="@color/blue"
+            android:textSize="12.0sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            style="@style/BackIconStyle"
+            android:src="@drawable/back_press"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/ScreenTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_header">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/top_header">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/flashLight"
+                android:layout_width="fill_parent"
+                android:layout_height="80.0dip"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:elevation="0.0dip"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activateBtn">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imv_flash"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:src="@drawable/flash_light"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchFlashlight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="d"
+                        android:textSize="0.0sp"
+                        android:thumb="@drawable/switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:track="@drawable/switch_track" />
+
+                    <TextView
+                        android:id="@+id/tv_fl"
+                        style="@style/LargeTextWithPrimaryTextColorStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/flash_light"
+                        android:textColor="@color/header_text_main"
+                        app:layout_constraintEnd_toStartOf="@id/switchFlashlight"
+                        app:layout_constraintStart_toEndOf="@id/imv_flash"
+                        app:layout_constraintTop_toTopOf="@id/imv_flash" />
+
+                    <TextView
+                        android:id="@+id/tv_fl_des"
+                        style="@style/NormalTextStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/turn_on_and_off_flash_light"
+                        android:textColor="@color/body_text_main"
+                        app:layout_constraintEnd_toEndOf="@id/tv_fl"
+                        app:layout_constraintStart_toEndOf="@id/imv_flash"
+                        app:layout_constraintTop_toBottomOf="@id/tv_fl" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:orientation="horizontal"
+                android:weightSum="2.0">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/flash_default"
+                    android:layout_width="0.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginEnd="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@color/white"
+                    android:elevation="0.0dip"
+                    android:foreground="?selectableItemBackground"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:cardElevation="0.0dip">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_flash_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_flash_default_check"
+                            android:layout_width="21.0dip"
+                            android:layout_height="21.0dip"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="10.0dip"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:src="@drawable/ic_check_enabled"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_flash_default"
+                            style="@style/MediumTextStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_2sdp"
+                            android:layout_marginStart="10.0dip"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:gravity="left"
+                            android:text="@string/defaulter"
+                            android:textColor="@color/body_text_main"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_flash_default_check"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_flash_default_check" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/flash_sos"
+                    android:layout_width="0.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@color/white"
+                    android:elevation="0.0dip"
+                    android:foreground="?selectableItemBackground"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:cardElevation="0.0dip">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_flash_sos"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_flash_sos_check"
+                            android:layout_width="21.0dip"
+                            android:layout_height="21.0dip"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="10.0dip"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:src="@drawable/ic_check_disabled"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_flash_sos"
+                            style="@style/MediumTextStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/sos_mode"
+                            android:textColor="@color/body_text_main"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_flash_sos_check"
+                            app:layout_constraintEnd_toStartOf="@id/iv_flash_sos_check"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_flash_sos_check" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_disco_mode"
+                android:layout_width="fill_parent"
+                android:layout_height="60.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_weight="1.0"
+                android:background="@color/white"
+                android:elevation="0.0dip"
+                android:foreground="?selectableItemBackground"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_disco_mode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_disco_check"
+                        android:layout_width="21.0dip"
+                        android:layout_height="21.0dip"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="10.0dip"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:src="@drawable/ic_check_disabled"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_flash"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/disco_mode"
+                        android:textColor="@color/body_text_main"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_disco_check"
+                        app:layout_constraintEnd_toStartOf="@id/iv_disco_check"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_disco_check" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vibration"
+                android:layout_width="fill_parent"
+                android:layout_height="80.0dip"
+                android:layout_marginTop="10.0dip"
+                android:elevation="0.0dip"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flashLight"
+                app:layout_constraintWidth_percent="0.95">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imv_vibration"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/vibaration"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchVibration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="d"
+                        android:textSize="0.0sp"
+                        android:thumb="@drawable/switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_vib"
+                        app:track="@drawable/switch_track" />
+
+                    <TextView
+                        android:id="@+id/tv_vib"
+                        style="@style/LargeTextWithPrimaryTextColorStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vibration"
+                        android:textColor="@color/header_text_main"
+                        app:layout_constraintEnd_toStartOf="@id/switchVibration"
+                        app:layout_constraintStart_toEndOf="@id/imv_vibration"
+                        app:layout_constraintTop_toTopOf="@id/imv_vibration" />
+
+                    <TextView
+                        android:id="@+id/tv_vib_des"
+                        style="@style/NormalTextStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/turn_on_and_off_vibration"
+                        android:textColor="@color/body_text_main"
+                        app:layout_constraintEnd_toEndOf="@id/tv_vib"
+                        app:layout_constraintStart_toEndOf="@id/imv_vibration"
+                        app:layout_constraintTop_toBottomOf="@id/tv_vib" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2.0">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/vibrate_default"
+                    android:layout_width="0.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginEnd="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@color/white"
+                    android:elevation="0.0dip"
+                    android:foreground="?selectableItemBackground"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:cardElevation="0.0dip">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_vibrate_default_check"
+                            android:layout_width="21.0dip"
+                            android:layout_height="21.0dip"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="10.0dip"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:src="@drawable/ic_check_enabled"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_vibrate_default"
+                            style="@style/MediumTextStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_2sdp"
+                            android:layout_marginStart="10.0dip"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:gravity="left"
+                            android:text="Default"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_vibrate_default_check"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_vibrate_default_check" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/vibrate_sos"
+                    android:layout_width="0.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@color/white"
+                    android:elevation="0.0dip"
+                    android:foreground="?selectableItemBackground"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:cardElevation="0.0dip">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_vibrate_sos_check"
+                            android:layout_width="21.0dip"
+                            android:layout_height="21.0dip"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="10.0dip"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:src="@drawable/ic_check_disabled"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_vibrate_sos"
+                            style="@style/MediumTextStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/sos_mode"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_vibrate_sos_check"
+                            app:layout_constraintEnd_toStartOf="@id/iv_vibrate_sos_check"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_vibrate_sos_check" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_strong_vibration"
+                android:layout_width="fill_parent"
+                android:layout_height="60.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_weight="1.0"
+                android:background="@color/white"
+                android:elevation="0.0dip"
+                android:foreground="?selectableItemBackground"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_strong_vibration_check"
+                        android:layout_width="21.0dip"
+                        android:layout_height="21.0dip"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="10.0dip"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:src="@drawable/ic_check_disabled"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_stromg_vibration"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/strong_vibration"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_strong_vibration_check"
+                        app:layout_constraintEnd_toStartOf="@id/iv_strong_vibration_check"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_strong_vibration_check" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_volume"
+                android:layout_width="fill_parent"
+                android:layout_height="80.0dip"
+                android:layout_marginTop="10.0dip"
+                android:elevation="0.0dip"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flashLight"
+                app:layout_constraintWidth_percent="0.95">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_volume"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/sound"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchVolume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="d"
+                        android:textSize="0.0sp"
+                        android:thumb="@drawable/switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_vol"
+                        app:track="@drawable/switch_track" />
+
+                    <TextView
+                        android:id="@+id/tv_vol"
+                        style="@style/LargeTextWithPrimaryTextColorStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/volume"
+                        android:textColor="@color/header_text_main"
+                        app:layout_constraintEnd_toStartOf="@id/switchVolume"
+                        app:layout_constraintStart_toEndOf="@id/iv_volume"
+                        app:layout_constraintTop_toTopOf="@id/iv_volume" />
+
+                    <TextView
+                        android:id="@+id/tv_vol_des"
+                        style="@style/NormalTextStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/turn_on_and_off_volume"
+                        android:textColor="@color/body_text_main"
+                        app:layout_constraintEnd_toEndOf="@id/tv_vol"
+                        app:layout_constraintStart_toEndOf="@id/iv_volume"
+                        app:layout_constraintTop_toBottomOf="@id/tv_vol" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/constraintLayout4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:background="@color/white"
+                android:elevation="0.0dip"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vibration">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_6sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_6sdp">
+
+                    <TextView
+                        android:id="@+id/tv_setting"
+                        style="@style/LargeTextWithPrimaryTextColorStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ringtone"
+                        android:textColor="@color/header_text_main"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_volume"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:text="@string/volume"
+                        android:textColor="@color/body_text_main"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_setting" />
+
+                    <TextView
+                        android:id="@+id/tv_volume_count"
+                        android:layout_width="40.0dip"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="right"
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@id/volume_seekBar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/volume_seekBar" />
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/volume_seekBar"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:gravity="start"
+                        android:max="100"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress_seekbar"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seekbar_thumb"
+                        app:layout_constraintEnd_toStartOf="@id/tv_volume_count"
+                        app:layout_constraintStart_toStartOf="@id/tv_volume"
+                        app:layout_constraintTop_toBottomOf="@id/tv_volume" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout5"
+                        android:visibility="gone"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:paddingVertical="4.0dip"
+                        android:paddingTop="4.0dip"
+                        android:paddingBottom="4.0dip"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/volume_seekBar"
+                        app:layout_constraintTop_toBottomOf="@id/volume_seekBar">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            style="@style/MediumTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0.0dip"
+                            android:text="@string/duaration"
+                            android:textColor="@color/body_text_main"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/llDuration"
+                            android:layout_width="0.0dip"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="4.0"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textView6"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/fifS"
+                                android:layout_width="0.0dip"
+                                android:layout_height="fill_parent"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_weight="1.0"
+                                android:background="@drawable/time_rounded_card_selected"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/fif"
+                                    style="@style/NormalTextStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="15 sec"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/thrS"
+                                android:layout_width="0.0dip"
+                                android:layout_height="fill_parent"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_weight="1.0"
+                                android:background="@drawable/time_rounded_card_unselected">
+
+                                <TextView
+                                    android:id="@+id/thr"
+                                    style="@style/NormalTextStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="30 sec"
+                                    android:textColor="@color/blue"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/oneM"
+                                android:layout_width="0.0dip"
+                                android:layout_height="fill_parent"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_weight="1.0"
+                                android:background="@drawable/time_rounded_card_unselected">
+
+                                <TextView
+                                    android:id="@+id/one"
+                                    style="@style/NormalTextStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1 min"
+                                    android:textColor="@color/blue"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/twoM"
+                                android:layout_width="0.0dip"
+                                android:layout_height="fill_parent"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_weight="1.0"
+                                android:background="@drawable/time_rounded_card_unselected">
+
+                                <TextView
+                                    android:id="@+id/two"
+                                    style="@style/NormalTextStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2 min"
+                                    android:textColor="@color/blue"
+                                    android:textSize="@dimen/_9sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

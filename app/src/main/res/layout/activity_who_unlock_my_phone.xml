@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/screen_bg_color"
+    android:layoutDirection="ltr">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_header"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/BackIconStyle"
+            android:src="@drawable/back_press"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/ScreenTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intruder_selfie"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/turnOnButton"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_margin="10.0dip"
+        android:background="@drawable/main_btn_back"
+        android:elevation="0.0dip"
+        android:foreground="?selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_header">
+
+        <TextView
+            android:id="@+id/tv_status"
+            style="@style/MediumTextStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/tap_to_active"
+            android:textColor="@color/green"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/turnOnButton">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_32sdp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:orientation="horizontal"
+                android:weightSum="2.0">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/changePin"
+                    android:layout_width="0.0dip"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginStart="10.0dip"
+                    android:layout_marginEnd="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@color/white"
+                    android:elevation="0.0dip"
+                    android:foreground="?selectableItemBackground"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:cardElevation="0.0dip">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/imv_changePin"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:src="@drawable/change_pin"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            style="@style/MediumTextStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_2sdp"
+                            android:layout_marginStart="10.0dip"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:gravity="left"
+                            android:text="@string/change_pin"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/imv_changePin"
+                            app:layout_constraintStart_toEndOf="@+id/imv_changePin"
+                            app:layout_constraintTop_toTopOf="@+id/imv_changePin" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/showIntruders"
+                    android:layout_width="0.0dip"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_marginEnd="10.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@color/white"
+                    android:elevation="0.0dip"
+                    android:foreground="?selectableItemBackground"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:cardElevation="0.0dip">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/imv_showIntruders"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:padding="@dimen/_2sdp"
+                            android:src="@drawable/show_induder"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            style="@style/MediumTextStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10.0dip"
+                            android:gravity="left"
+                            android:text="@string/show_intruders"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/imv_showIntruders"
+                            app:layout_constraintStart_toEndOf="@+id/imv_showIntruders"
+                            app:layout_constraintTop_toTopOf="@+id/imv_showIntruders" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ringerAlarm"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginHorizontal="10.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:background="@color/white"
+                android:elevation="0.0dip"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0.0dip">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imv_ringerAlarm"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:padding="@dimen/_1sdp"
+                        android:src="@drawable/induder"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchRingerAlarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textSize="0.0sp"
+                        android:thumb="@drawable/switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:track="@drawable/switch_track" />
+
+                    <TextView
+                        android:id="@+id/tv_fl"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_2sdp"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginLeft="@dimen/_2sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:text="@string/ringer_alarm_on_off"
+                        app:layout_constraintBottom_toBottomOf="@+id/imv_ringerAlarm"
+                        app:layout_constraintEnd_toStartOf="@+id/switchRingerAlarm"
+                        app:layout_constraintStart_toEndOf="@+id/imv_ringerAlarm"
+                        app:layout_constraintTop_toTopOf="@+id/imv_ringerAlarm" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

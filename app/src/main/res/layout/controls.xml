@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <FrameLayout
+        android:id="@+id/videoPlayerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+<!--        <net.pubnative.lite.sdk.vpaid.widget.LinearCountDownView-->
+<!--            android:id="@+id/linear_count_down"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start|bottom|center" />-->
+
+        <ImageView
+            android:id="@+id/muteView"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="end"
+            android:contentDescription="@string/unmute_button"
+            android:padding="8.0dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/unmute" />
+
+        <ImageView
+            android:id="@+id/skipView"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="start"
+            android:padding="8.0dip"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/progressSkipView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom|center"
+            android:layout_marginBottom="40.0dip"
+            android:background="@drawable/open_url_background"
+            android:paddingHorizontal="10.0dip"
+            android:paddingVertical="5.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingTop="5.0dip"
+            android:paddingRight="10.0dip"
+            android:paddingBottom="5.0dip"
+            android:text="@string/skip_ad"
+            android:textColor="#ffffffff"
+            android:textSize="16.0sp"
+            android:visibility="gone" />
+    </FrameLayout>
+</FrameLayout>
